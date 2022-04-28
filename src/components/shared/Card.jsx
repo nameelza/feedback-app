@@ -1,7 +1,7 @@
-function Card() {
+function Card({ children }) {
   return (
     <div className="card">
-      <h1>Card</h1>
+      {children}
     </div>
   );
 }

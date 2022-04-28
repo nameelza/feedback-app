@@ -1,7 +1,8 @@
 function FeedbackItem() {
   return (
-    <div>
-      <h1>Feedback Item</h1>
+    <div className="card">
+      <div className="num-display">10</div>
+      <div className="text-display">This is an example of a feedback card.</div>
     </div>
   );
 }

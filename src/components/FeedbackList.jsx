@@ -7,7 +7,13 @@ function FeedbackList({ feedback }) {
       {!feedback || feedback.length === 0 ? (
         <div>No feedback available</div>
       ) : (
-        feedback.map((item) => <FeedbackItem key={item.id} item={item} />)
+        feedback.map((item) => (
+          <FeedbackItem
+            key={item.id}
+            item={item}
+            handleDelete={(id) => console.log(id)}
+          />
+        ))
       )}
     </div>
   );

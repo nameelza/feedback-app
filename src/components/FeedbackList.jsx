@@ -2,13 +2,11 @@ import FeedbackItem from "./FeedbackItem";
 
 function FeedbackList({ feedback }) {
   return (
-    <div>
+    <div className="feedback-list">
       {!feedback || feedback.length === 0 ? (
         <div>No feedback available</div>
       ) : (
-        feedback.map((item) => (
-          <FeedbackItem key={feedback.id} feedback={item} />
-        ))
+        feedback.map((item) => <FeedbackItem key={item.id} feedback={item} />)
       )}
     </div>
   );

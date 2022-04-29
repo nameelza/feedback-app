@@ -19,7 +19,7 @@ function FeedbackForm() {
             placeholder="Write a review"
             value={text}
           />
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={text.length < 10} >Submit</button>
         </div>
       </form>
     </Card>

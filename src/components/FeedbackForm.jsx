@@ -1,4 +1,5 @@
 import { useState } from "react";
+import RatingSelect from "./RatingSelect";
 import Card from "./shared/Card";
 import Button from "./shared/Button";
 
@@ -13,7 +14,9 @@ function FeedbackForm() {
       setMessage("");
     } else if (value !== "" && value.trim().length < 10) {
       setMessage(
-        `Text must be at least ${10 - value.length} more ${value.length === 9 ? "character" : "characters"} long`
+        `Text must be at least ${10 - value.length} more ${
+          value.length === 9 ? "character" : "characters"
+        } long`
       );
     } else {
       setMessage("");
@@ -23,8 +26,9 @@ function FeedbackForm() {
 
   return (
     <Card>
-      <h1>How would you rate your service with us?</h1>
       <form>
+        <h2>How would you rate your service with us?</h2>
+        <RatingSelect />
         <div className="input-group">
           <input
             onChange={handleTextChange}

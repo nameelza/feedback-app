@@ -13,7 +13,7 @@ function FeedbackForm() {
       setMessage("");
     } else if (value !== "" && value.trim().length < 10) {
       setMessage(
-        `Text must be at least ${10 - value.length} more characters long`
+        `Text must be at least ${10 - value.length} more ${value.length === 9 ? "character" : "characters"} long`
       );
     } else {
       setMessage("");

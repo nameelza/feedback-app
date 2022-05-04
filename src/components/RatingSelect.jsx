@@ -1,6 +1,6 @@
 function RatingSelect({ selected, select }) {
   const handleChange = (e) => {
-    console.log(e.target.value);
+    select(+e.target.value);
   };
   return (
     <ul className="rating">
@@ -14,7 +14,7 @@ function RatingSelect({ selected, select }) {
             onChange={handleChange}
             checked={selected === i + 1}
           />
-          <label htmlFor="num1">{i + 1}</label>
+          <label htmlFor={`num${i + 1}`}>{i + 1}</label>
         </li>
       ))}
     </ul>

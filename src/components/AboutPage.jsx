@@ -1,5 +1,7 @@
+import Card from "./shared/Card";
+
 function AboutPage() {
-  return <div>About</div>;
+  return <Card>About</Card>;
 }
 
 export default AboutPage;

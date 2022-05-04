@@ -1,20 +1,22 @@
-function RatingSelect() {
-  const handleChange = () => {
-    console.log("selected");
+function RatingSelect({ selected, select }) {
+  const handleChange = (e) => {
+    console.log(e.target.value);
   };
   return (
     <ul className="rating">
-      <li>
-        <input
-          type="radio"
-          id="num1"
-          name="rating"
-          value="1"
-          onChange={handleChange}
-          selected="true"
-        />
-        <label htmlFor="num1">1</label>
-      </li>
+      {[...Array(10)].map((_, i) => (
+        <li key={`rating-${i + 1}`}>
+          <input
+            type="radio"
+            id={`num${i + 1}`}
+            name="rating"
+            value={i + 1}
+            onChange={handleChange}
+            checked={selected === i + 1}
+          />
+          <label htmlFor="num1">{i + 1}</label>
+        </li>
+      ))}
     </ul>
   );
 }

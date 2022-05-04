@@ -2,6 +2,7 @@ function RatingSelect({ selected, select }) {
   const handleChange = (e) => {
     select(+e.target.value);
   };
+
   return (
     <ul className="rating">
       {[...Array(10)].map((_, i) => (

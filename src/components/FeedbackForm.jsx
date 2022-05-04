@@ -24,11 +24,27 @@ function FeedbackForm() {
     setText(value);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text.trim().length < 10) {
+      setMessage(
+        `Text must be at least ${10 - text.length} more ${
+          text.length === 9 ? "character" : "characters"
+        } long`
+      );
+    } else {
+      const newFeedback = {
+        text,
+        rating,
+      };
+    }
+  };
+
   return (
     <Card>
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>How would you rate your service with us?</h2>
-        <RatingSelect selected={rating} select={setRating}/>
+        <RatingSelect selected={rating} select={setRating} />
         <div className="input-group">
           <input
             onChange={handleTextChange}

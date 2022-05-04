@@ -1,10 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { useState } from "react";
 import FeedbackData from "./data/feedbackData";
 import Header from "./components/Header";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackStats from "./components/FeedbackStats";
 import FeedbackForm from "./components/FeedbackForm";
+import AboutPage from "./components/AboutPage";
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);

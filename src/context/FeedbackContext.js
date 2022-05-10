@@ -10,6 +10,16 @@ export const FeedbackProvider = ({ children }) => {
       text: "This is text 1",
       rating: 5,
     },
+    {
+      id: 2,
+      text: "This is text 2",
+      rating: 9,
+    },
+    {
+      id: 3,
+      text: "This is text 3",
+      rating: 8,
+    },
   ]);
 
   const addFeedback = (newFeedback) => {

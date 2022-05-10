@@ -33,6 +33,11 @@ export const FeedbackProvider = ({ children }) => {
     }
   };
 
+  const [feedbackEdit, setFeedbackEdit] = useState({
+    item: {},
+    edit: false,
+  });
+
   return (
     <FeedbackContext.Provider
       value={{

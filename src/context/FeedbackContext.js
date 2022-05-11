@@ -7,8 +7,14 @@ export const FeedbackProvider = ({ children }) => {
   const [feedback, setFeedback] = useState([]);
 
   useEffect(() => {
-    console.log("context backend")
-  }, [])
+    fetchFeedback();
+  }, []);
+
+  const fetchFeedback = async () => {
+    const feedback = await fetch("http://localhost:3001/feedback");
+    const data = feedback.json();
+    console.log(data);
+  };
 
   const [feedbackEdit, setFeedbackEdit] = useState({
     item: {},

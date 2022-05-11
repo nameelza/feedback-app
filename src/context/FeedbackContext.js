@@ -1,26 +1,15 @@
 import { v4 as uuidv4 } from "uuid";
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
-  const [feedback, setFeedback] = useState([
-    {
-      id: 1,
-      text: "This is feedback 1",
-      rating: 5,
-    },
-    {
-      id: 2,
-      text: "This is feedback 2",
-      rating: 9,
-    },
-    {
-      id: 3,
-      text: "This is feedback 3",
-      rating: 8,
-    },
-  ]);
+  const [feedback, setFeedback] = useState([]);
+
+  useEffect(() => {
+    console.log("context backend")
+  }, [])
+
   const [feedbackEdit, setFeedbackEdit] = useState({
     item: {},
     edit: false,

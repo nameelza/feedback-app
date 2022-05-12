@@ -29,10 +29,10 @@ export const FeedbackProvider = ({ children }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newFeedback),
-    })
+    });
     const data = await response.json();
 
-    setFeedback([...feedback, data]);
+    setFeedback([data, ...feedback]);
   };
 
   const deleteFeedback = (id) => {

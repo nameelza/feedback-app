@@ -4,9 +4,11 @@ import FeedbackItem from "./FeedbackItem";
 import FeedbackContext from "../context/FeedbackContext";
 
 function FeedbackList() {
-  const { feedback } = useContext(FeedbackContext);
+  const { feedback, isLoading } = useContext(FeedbackContext);
 
-  return (
+  return isLoading ? (
+    <h3>Loading...</h3>
+  ) : (
     <div className="feedback-list">
       {!feedback || feedback.length === 0 ? (
         <div>No feedback available</div>
@@ -19,10 +21,7 @@ function FeedbackList() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <FeedbackItem
-                key={item.id}
-                item={item}
-              />
+              <FeedbackItem key={item.id} item={item} />
             </motion.div>
           ))}
         </AnimatePresence>

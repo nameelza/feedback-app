@@ -22,8 +22,6 @@ export const FeedbackProvider = ({ children }) => {
     setIsLoading(false);
   };
 
-  
-
   const addFeedback = (newFeedback) => {
     newFeedback.id = uuidv4();
     setFeedback([newFeedback, ...feedback]);

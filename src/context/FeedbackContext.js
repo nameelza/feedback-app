@@ -13,7 +13,7 @@ export const FeedbackProvider = ({ children }) => {
   const fetchFeedback = async () => {
     const feedback = await fetch("http://localhost:3001/feedback");
     const data = await feedback.json();
-    console.log(data);
+    setFeedback(data);
   };
 
   const [feedbackEdit, setFeedbackEdit] = useState({

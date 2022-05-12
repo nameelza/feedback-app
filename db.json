@@ -11,9 +11,9 @@
       "text": "Feedback 2 from backend"
     },
     {
-      "id": 3,
-      "rating": 5,
-      "text": "Feedback 3 from backend"
+      "text": "Feedback 3 from backend updated",
+      "rating": 6,
+      "id": 3
     }
   ]
 }

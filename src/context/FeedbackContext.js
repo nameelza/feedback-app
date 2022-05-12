@@ -4,7 +4,12 @@ import { createContext, useState, useEffect } from "react";
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(true);
   const [feedback, setFeedback] = useState([]);
+  const [feedbackEdit, setFeedbackEdit] = useState({
+    item: {},
+    edit: false,
+  });
 
   useEffect(() => {
     fetchFeedback();
@@ -14,12 +19,10 @@ export const FeedbackProvider = ({ children }) => {
     const feedback = await fetch("http://localhost:3001/feedback");
     const data = await feedback.json();
     setFeedback(data);
+    setIsLoading(false);
   };
 
-  const [feedbackEdit, setFeedbackEdit] = useState({
-    item: {},
-    edit: false,
-  });
+  
 
   const addFeedback = (newFeedback) => {
     newFeedback.id = uuidv4();
@@ -52,6 +55,7 @@ export const FeedbackProvider = ({ children }) => {
       value={{
         feedback,
         feedbackEdit,
+        isLoading,
         deleteFeedback,
         addFeedback,
         editFeedback,

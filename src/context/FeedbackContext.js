@@ -28,7 +28,7 @@ export const FeedbackProvider = ({ children }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: newFeedback,
+      body: JSON.stringify(newFeedback),
     })
     const data = await response.json();
 

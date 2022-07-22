@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 
 const FeedbackContext = createContext();
+const port = process.env.PORT || 3000;
 
 export const FeedbackProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,10 +16,10 @@ export const FeedbackProvider = ({ children }) => {
   }, []);
 
   const fetchFeedback = async () => {
-    const feedback = await fetch("/feedback?_sort=id&_order=desc");
-    const data = await feedback.json();
+    fetch(`http://localhost:${port}/feedback?_sort=id&_order=desc`).then((response) => response.json()).then((data) => (setFeedback(data)))
+    // const data = await feedback.json();
+
     
-    setFeedback(data);
     setIsLoading(false);
   };
 
